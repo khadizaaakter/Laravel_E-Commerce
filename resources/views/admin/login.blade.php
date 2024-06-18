@@ -9,8 +9,8 @@
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="{{ asset('admin-assets/plugins/fontawesome-free/css/all.min.css') }}">
 		<!-- Theme style -->
-		<link rel="stylesheet" href="css/adminlte.min.css">
-		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="{{ asset('admin-assets/css/adminlte.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('admin-assets/css/custom.css') }}">
 	</head>
 	<body class="hold-transition login-page">
 		<div class="login-box">
