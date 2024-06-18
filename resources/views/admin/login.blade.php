@@ -20,7 +20,7 @@
 					<a href="#" class="h3">Admin Panel</a>
 			  	</div>
 			  	<div class="card-body">
-					<p class="login-box-msg">Sign in to start your session</p>
+					<p class="login-box-msg">Please sign-in</p>
 					<form action="dashboard.html" method="post">
 				  		<div class="input-group mb-3">
 							<input type="email" class="form-control" placeholder="Email">
