@@ -30,6 +30,10 @@
 									<span class="fas fa-envelope"></span>
 					  			</div>
 							</div>
+
+							@error('email')
+							<p class="invalid-feedback">{{ $message }}</p>
+							@enderror
 				  		</div>
 				  		<div class="input-group mb-3">
 							<input type="password" name="password" id="password" class="form-control" placeholder="Password">
@@ -38,6 +42,9 @@
 									<span class="fas fa-lock"></span>
 					  			</div>
 							</div>
+							@error('password')
+							<p class="invalid-feedback">{{ $message }}</p>
+							@enderror
 				  		</div>
 				  		<div class="row">
 							<!-- <div class="col-8">
