@@ -23,7 +23,9 @@ class AdminLoginController extends Controller
         if ($validator->passes()) {
 
         } else {
-            return redirect()->route('admin.login')->withErrors($validator)->withInput($request->only('email'));
+            return redirect()->route('admin.login')
+            ->withErrors($validator)
+            ->withInput($request->only('email'));
         }
     }
 }
