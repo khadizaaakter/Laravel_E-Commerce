@@ -44,6 +44,4 @@ class AdminLoginController extends Controller
                 ->withInput($request->only('email'));
         }
     }
-
-
 }
