@@ -29,10 +29,19 @@
                     </div>
                     <div class="col-md-6">
                         <div class="mb-3">
-                            <label for="email">Slug</label>
+                            <label for="slug">Slug</label>
                             <input type="text" name="slug" id="slug" class="form-control" placeholder="Slug">	
                         </div>
-                    </div>									
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="status">Status</label>
+                        <select name="status" id="status" class="form-control">
+                        <option value="1">Active</option>
+                        <option value="0">Block</option>    
+                        </select>                        </div>
+                    </div>
                 </div>
             </div>							
         </div>
