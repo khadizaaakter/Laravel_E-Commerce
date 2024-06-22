@@ -1,5 +1,8 @@
 @extends('admin.layouts.app')
 
+@section('content')
+	
+@endsection
 <section class="content-header">					
 	<div class="container-fluid">
 		<div class="row mb-2">
@@ -60,3 +63,5 @@
 	</div>					
 	<!-- /.card -->
 </section>
+
+@endsection
