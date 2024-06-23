@@ -112,5 +112,13 @@
                 }
             })
         })
+
+        $.ajax({
+            url: '{{ route('categories.store') }}',
+            type: 'post',
+            data: element.serializeArray(),
+            dataType: 'json',
+            success: function(response) {}
+        });
     </script>
 @endsection
