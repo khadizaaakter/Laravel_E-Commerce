@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Auth\Events\Validated;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -11,7 +11,6 @@ class CategoryController extends Controller
 {
     public function index()
     {
-
     }
 
     public function create()
@@ -21,34 +20,41 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        $validator = validator::make($request->all(),[
+        $validator = validator::make($request->all(), [
             'name' => 'required',
             'slug' => 'required|unique:categories',
         ]);
 
-        if($validator->passes()){
+        if ($validator->passes()) {
+            $category = new Category();
+            $category->name = $request->name;
+            $category->slug = $request->slug;
+            $category->status = $request->status;
+            $category->save();
 
-            
-        }else{
+            // $request->session()->flash('success', 'Category added successfully.');
+
             return response()->json([
-            'status' => false,
-            'errors' => $validator->errors()
+                'status' => true,
+                'message' => 'Category added successfully.'
+            ]);
+        } else {
+            return response()->json([
+                'status' => false,
+                'errors' => $validator->errors()
             ]);
         }
     }
 
     public function edit()
     {
-
     }
 
     public function update()
     {
-
     }
 
     public function destroy()
     {
-
     }
 }
