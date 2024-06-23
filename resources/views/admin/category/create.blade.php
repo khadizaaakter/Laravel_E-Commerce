@@ -64,11 +64,11 @@
     <script>
         $("#categoryForm").submit(function(event) {
             event.preventDefault();
-
+            var element = $(this);
             $.ajax({
-                url: '',
+                url: '{{ route('categories.store') }}',
                 type: 'post',
-                data: '',
+                data: element.serializeArray(),
                 dataType: 'json',
                 success: function(response) {
 
