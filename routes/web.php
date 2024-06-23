@@ -37,9 +37,9 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
         Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
 
-        Route::get('/getSlug', function(Request $request){
+        Route::get('/getSlug', function (Request $request) {
             $slug = '';
-            if(!empty($request->title)){
+            if (!empty($request->title)) {
                 $slug = Str::slug($request->title);
             }
             return response()->json([
@@ -48,6 +48,4 @@ Route::group(['prefix' => 'admin'], function () {
             ]);
         });
     });
-
-
 });
