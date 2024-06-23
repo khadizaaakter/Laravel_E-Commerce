@@ -61,5 +61,22 @@
 @endsection
 
 @section('customJs')
-    <script></script>
+    <script>
+        $("#categoryForm").submit(function(event) {
+            event.preventDefault();
+
+            $.ajax({
+                url: '',
+                type: 'post',
+                data: '',
+                dataType: 'json',
+                success: function(response) {
+
+                },
+                error: function(jqXHR, exception) {
+                    console.log("Something went wrong!");
+                }
+            })
+        })
+    </script>
 @endsection
