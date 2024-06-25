@@ -44,6 +44,9 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @if ($categories->isNotEmpty())
+                                @else
+                            @endif
                             <tr>
                                 <td>1</td>
                                 <td>Samsung</td>
