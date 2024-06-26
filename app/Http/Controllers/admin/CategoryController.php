@@ -51,7 +51,8 @@ class CategoryController extends Controller
     }
 
     public function edit()
-    {
+    {\
+        fkjgfg
     }
 
     public function update()
