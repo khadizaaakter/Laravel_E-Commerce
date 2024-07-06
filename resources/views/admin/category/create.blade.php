@@ -65,12 +65,15 @@
         $("#categoryForm").submit(function(event) {
             event.preventDefault();
             var element = $(this);
+            $("button[type=submit]").prop('disable', true);
             $.ajax({
                 url: '{{ route('categories.store') }}',
                 type: 'post',
                 data: element.serializeArray(),
                 dataType: 'json',
                 success: function(response) {
+                    $("button[type=submit]").prop('disable', false);
+
 
                     if (response["status"] == true) {
 
@@ -106,8 +109,6 @@
                                 .removeClass('invalid-feedback').html("");
                         }
                     }
-
-
                 },
                 error: function(jqXHR, exception) {
                     console.log("Something went wrong!");
@@ -117,6 +118,7 @@
 
         $('#name').change(function() {
             element = $(this);
+            $("button[type=submit]").prop('disable', true);
             $.ajax({
                 url: '{{ route('getSlug') }}',
                 type: 'get',
@@ -125,6 +127,7 @@
                 },
                 dataType: 'json',
                 success: function(response) {
+                    $("button[type=submit]").prop('disable', false);
                     if (response["status"] == true) {
                         $("#slug").val(response["slug"]);
                     }
