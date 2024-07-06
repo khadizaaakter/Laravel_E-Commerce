@@ -9,11 +9,17 @@ use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $categories = Category::latest()->simplepaginate(10);
+
+        $categories = Category::latest();
+
+        if (!empty($request->get('keyword'))) {
+            $categories = $categories->where('name', 'like', '%' . ($request->get('keyword')) . '%');
+        }
+
+        $categories = $categories->simplepaginate(10);
         return view('admin.category.list', compact('categories'));
-       
     }
 
     public function create()
@@ -51,7 +57,6 @@ class CategoryController extends Controller
 
     public function edit()
     {
-        
     }
     public function update()
     {
