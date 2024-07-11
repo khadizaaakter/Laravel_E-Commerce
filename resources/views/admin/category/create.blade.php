@@ -131,6 +131,8 @@
                     if (response["status"] == true) {
                         $("#slug").val(response["slug"]);
                     }
+
+            
                 }
             });
         });
