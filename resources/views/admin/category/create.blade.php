@@ -41,7 +41,7 @@
                                     <label for="image">Image</label>
                                         <div id="image" class="dropzone dz-clickable">
                                             <div class="dz-message needsclick">
-                                                <br>Drop files here or click to upload.<br><br>w
+                                                <br>Drop files here or click to upload.<br><br>
                                             </div>
                                         </div>
                                    
@@ -160,7 +160,7 @@
             addRemoveLinks: true,
             acceptedFiles: "image/jpeg,image/png,image/gif",
             headers: {
-                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             success: function(file, response) {
                 $("#image_id").val(response.image_id);
