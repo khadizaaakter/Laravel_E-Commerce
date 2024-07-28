@@ -41,7 +41,7 @@
                                     <label for="image">Image</label>
                                         <div id="image" class="dropzone dz-clickable">
                                             <div class="dz-message needsclick">
-                                                <br>Drop files here or click to upload.<br><br>
+                                                <br>Drop files here or click to upload.<br><br>w
                                             </div>
                                         </div>
                                    
