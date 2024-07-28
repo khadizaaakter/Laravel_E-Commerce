@@ -132,9 +132,31 @@
                         $("#slug").val(response["slug"]);
                     }
 
-            
+
                 }
             });
+        });
+
+        Dropzone.autoDiscover = false;
+        const dropzone = $('#image').dropzone({
+            init: function() {
+                this.on('addedfile', function(file) {
+                    if (this.files.length > 1) {
+                        this.removeFile(this.files[0]);
+                    }
+                });
+            },
+            url: "{{ route('temp-images.create') }}",
+            maxFiles: 1,
+            paramName: 'image',
+            addRemoveLinks: true,
+            acceptedFiles: "image/jpeg,image/png,image/gif",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            },
+            success: function(file, response) {
+                $("#image_id").val(response.image_id);
+            }
         });
     </script>
 @endsection
